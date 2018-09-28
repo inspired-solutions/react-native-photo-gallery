@@ -39,9 +39,13 @@ export default class Gallery extends Component {
     };
   }
 
+  getCurrentIndex(){
+    return this.state.index;
+  }
+
   goTo(index) {
     this.setState({ index });
-    this.swiper.scrollToIndex({ index });
+    this.swiper.scrollToIndex({ index: Number(index) });
   }
 
   render() {
