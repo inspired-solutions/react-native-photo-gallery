@@ -51,13 +51,16 @@ export default class Gallery extends Component {
   render() {
     const backgroundColor = this.props.backgroundColor || '#000';
     const data = this.props.data || [];
+    const noImageMsg = this.props.noImageMsg || 'No images found.';
     return (
       <View
         orientation={this.state.orientation}
         style={{ ...styles.container, backgroundColor }}
       >
         {!data.length &&
-          <ActivityIndicator style={styles.loader} />}
+          <View>
+            <Text>{noImageMsg}</Text>
+        </View>}
 
         <FlatList
           style={styles.swiper}
@@ -86,6 +89,7 @@ export default class Gallery extends Component {
 
 Gallery.propTypes = {
   backgroundColor: PropTypes.string,
+  noImageMsg: PropTypes.string,
   data: PropTypes.arrayOf((propValue, key) => {
     if (!propValue[key].id || !propValue[key].image) {
       return new Error(
