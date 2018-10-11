@@ -34,7 +34,7 @@ export class Slide extends Component {
           { width: Dimensions.get('window').width, height: Dimensions.get('window').height }
         ]}
       >
-        
+
         {Platform.OS === 'android' ?
           <PhotoView
             source={this.props.item.image}

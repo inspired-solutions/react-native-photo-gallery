@@ -2,6 +2,7 @@ import {
   ActivityIndicator,
   Dimensions,
   FlatList,
+  Text,
   View,
 } from 'react-native';
 import React, { Component } from 'react';
